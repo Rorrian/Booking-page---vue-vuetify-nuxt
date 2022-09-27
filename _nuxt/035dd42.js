@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{692:function(n,t,o){"use strict";o.r(t);var e={name:"arrow-down"},r=o(32),component=Object(r.a)(e,(function(){return(0,this._self._c)("path",{attrs:{d:"M1 1L7 7L13 1",stroke:"#37373A","stroke-width":"2","stroke-linecap":"round","stroke-linejoin":"round"}})}),[],!1,null,"aff8c33c",null);t.default=component.exports}}]);
