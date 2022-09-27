@@ -1,3 +1,3 @@
 module.exports={
-  publicPath: '/Vue-vuetify-nuxt/'
+  publicPath: './Vue-vuetify-nuxt/..'
 }
