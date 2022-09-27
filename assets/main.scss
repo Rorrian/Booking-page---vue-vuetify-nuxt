@@ -1,0 +1,430 @@
+@import "variables";
+//-----------------------------------------------------
+//NavBar.vue +
+
+.header {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  height: auto !important;
+  padding: 58px 0 60px 0 !important;
+
+  @media (max-width: 480.01px) {
+    padding: 47px 0 18px 0 !important;
+  }
+
+  &__btn {
+    //!При исп-и кастомных переменных их нужно указывать с "$"
+    border-radius: $br16;
+    background-color: rgba(255, 251, 249, 0.6) !important;
+
+    width: 138px;
+    height: 48px !important;
+
+    @media (max-width: 1264.01px) {
+      width: 15.2%;
+    }
+
+    @media (max-width: 480.01px) {
+      display: none;
+    }
+  }
+
+  &__top {
+  }
+
+  &__filters {
+  }
+}
+
+.filters {
+  &__main {
+    & > * {
+      min-width: 1.39% !important;
+    }
+  }
+
+  &__option {
+  }
+
+  .v-divider {
+    height: 28px;
+    align-self: center;
+  }
+
+  &__item {
+    border-radius: $br16;
+
+    & .v-input__slot {
+      min-width: 200px !important;
+    }
+
+    .v-label {
+      color: $textColor-1 !important;
+    }
+
+
+  }
+
+  .filters__all-wrapper {
+    display: flex;
+    height: 56px;
+
+    @media (max-width: 480.01px) {
+      height: 32px !important;
+    }
+
+    & .v-badge__wrapper span {
+      bottom: calc(100% - 17px) !important;
+      left: calc(100% - 12px) !important;
+
+      @media (max-width: 480.01px) {
+        bottom: calc(100% - 16px) !important;
+        left: calc(100% - 16px) !important;
+      }
+    }
+
+  }
+
+  .filters__all, .filters__all .v-btn__content {
+    @media (max-width: 480.01px) {
+      width: 100%;
+    }
+  }
+
+  &__select {
+  }
+
+  //Подчеркивание у select
+  .theme--light.v-text-field > .v-input__control > .v-input__slot:before {
+    border: none;
+  }
+
+  &__menu-prices {
+  }
+
+  &__btn {
+    height: 56px !important;
+
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 150% !important;
+    letter-spacing: 0.005em !important;
+    text-transform: none !important;
+
+    border: 1px solid #FFFBF9 !important;
+
+    &.active {
+      background-color: #E6F7F6 !important;
+      border: 1px solid #33BDB5 !important;
+    }
+
+    @media (max-width: 480.01px) {
+      height: 32px !important;
+    }
+  }
+
+  .v-select__selections {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 200px !important;
+  }
+}
+
+//--------------------------------
+//index.vue +
+
+.search-container {
+  &__row {
+    height: 2210px;
+
+    .v-pagination {
+
+      button:first-of-type {
+        box-shadow: none;
+      }
+
+      button {
+        .v-icon {
+          color: #AFAFB0;
+        }
+      }
+
+      .v-pagination__navigation {
+        background-color: unset !important;
+      }
+
+      .v-pagination__item:not(.v-pagination__item--active) {
+        background-color: unset;
+      }
+
+      .v-pagination__item--active {
+        color: #D7D7D8 !important;
+      }
+    }
+  }
+
+  &__col {
+    &:first-child {
+    }
+
+    &__map {
+      height: 100%;
+    }
+  }
+
+  &__list {
+    margin: 0 auto;
+  }
+
+  &__list-item {
+    &:first-of-type {
+      @media (max-width: 600.01px) {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  &__btn {
+    border-radius: $br16;
+    margin: 0 auto;
+    text-transform: none !important;
+  }
+}
+
+//--------------------------------
+//SmallSearchForm.vue +
+
+.small-search-form {
+  background-color: $accentColor-1;
+  padding: 20px 1.5%;
+  border-radius: $br12;
+  color: $textColor-1;
+
+  margin-left: 13%;
+  margin-right: 5%;
+
+  @media (max-width: 1200.01px) {
+    margin-left: 8%;
+    margin-right: 2%;
+  }
+  @media (max-width: 960.01px) {
+    margin: 0;
+  }
+  @media (max-width: 480.01px) {
+    padding: 9px 1.5%;
+  }
+
+  &__row {
+  }
+
+  .v-divider {
+    height: 28px;
+    align-self: center;
+  }
+
+  &__item {
+    border-radius: 0 !important;
+  }
+
+  //-----Кнопка поиска-----
+  &__btn {
+  }
+
+  //-----Выбор города-----
+  &__city-select {
+    max-width: 150px !important;
+
+    //Скрываем дефолтную иконку
+    & .v-input__append-inner {
+      display: none !important;
+    }
+
+    //Текст, кот. не помещается в поле скрывается
+    // и вместо него отображается многоточие
+    .v-select__slot > input {
+      overflow: hidden;
+
+      @media (max-width: 480.01px) {
+        text-overflow: ellipsis;
+      }
+
+    }
+
+    & .v-input__slot {
+      padding: 0 !important;
+    }
+  }
+
+  //-----Выбор дат-----
+  &__menu-date {
+    &-input {
+      max-width: 150px !important;
+      min-width: 82px !important;
+    }
+
+    &-picker {
+      @media (max-width: 500.01px) {
+        .v-picker__body {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+  & .v-input__slot::before {
+    border: none !important;
+  }
+
+  .v-text-field__slot > input {
+    max-width: 150px !important;
+    text-align: center !important;
+  }
+
+  //-----Настройка параметров-----
+  &__menu-details {
+    &-input {
+      @media (max-width: 1024.01px) {
+        max-height: 26px !important;
+      }
+
+      & .v-input__slot span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      @media (max-width: 480.01px) {
+        min-width: 82px !important;
+      }
+    }
+  }
+}
+
+.v-menu__content {
+  overflow-y: hidden !important;
+}
+
+.menu-details {
+  &__group > .row {
+    @media (max-width: 880.01px) {
+      flex-direction: column;
+    }
+  }
+
+  &__label {
+  }
+
+  &__btn {
+  }
+
+  &__counter {
+    max-width: 50px !important;
+
+    & input {
+      text-align: center !important;
+    }
+  }
+}
+
+//-----ItemApartment.vue-----
+
+.apartment-item {
+  border-radius: $br12;
+  overflow: hidden;
+
+  &__img {
+  }
+
+  &__description {
+    padding: 10px 15px 14px 12px;
+
+    .v-btn--icon.v-size--default {
+      width: unset !important;
+      height: unset !important;
+    }
+
+    @media (max-width: 1264.01px) {
+      .v-card__subtitle {
+        font-size: 0.625rem !important;
+      }
+    }
+  }
+
+  &__info {
+    padding: 10px 15px 14px 12px;
+  }
+
+  @media (max-width: 400.01px) {
+    align-items: center;
+    &__reviews-price {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+    }
+  }
+}
+
+.params {
+  &__list {
+  }
+
+  &__item {
+    flex: 0 0 auto !important;
+    min-height: unset !important;
+
+    @media (max-width: 1264.01px) {
+      font-size: 0.625rem !important;
+    }
+  }
+}
+
+.options {
+  &__list {
+    @media (max-width: 1024.01px) {
+      height: 25px !important;
+      overflow: hidden;
+    }
+  }
+
+  &__item {
+    flex: 0 0 auto !important;
+    min-height: unset !important;
+
+    @media (max-width: 1264.01px) {
+      font-size: 0.625rem !important;
+    }
+
+    .v-icon {
+      margin-right: 6px;
+    }
+  }
+
+  &__chip {
+    padding: 2px 12px 2px 6px !important;
+  }
+}
+
+.details {
+  &__list {
+  }
+
+  &__item {
+    font-size: 0.625rem !important;
+    min-height: unset !important;
+    line-height: 1rem;
+  }
+}
+
+//--------------------------------
+//Footer.vue
+
+.v-footer {
+  .v-divider {
+    width: 80% !important;
+    border-color: #5F5F61 !important;
+    margin: 0 auto;
+  }
+}
+
+//--------------------------------
